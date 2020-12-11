@@ -10,7 +10,7 @@ request.onload = function() {
     var srequest = new XMLHttpRequest();
     lat = data[104].latlng[0];
 	lon = data[104].latlng[1];
-	srequest.open('GET',"api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f65b074e7e5f9345ad4649fe375b9294",true);
+	srequest.open('GET',`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f65b074e7e5f9345ad4649fe375b9294`,true);
 	srequest.send();
 	srequest.onload = function() {
 		var weatherdata = JSON.parse(this.response);
